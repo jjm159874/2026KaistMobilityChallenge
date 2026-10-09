@@ -25,9 +25,10 @@ ROS 2 기반으로 동작하며, Pure pursuit + PID 제어를 통해 차선이�
 ## 구현 기술
 
 ### 1. Pure pursuit + PID 제어
-
-Matlab Simulink를 활용하여 종방향 제어에 Pid 제어를 구현
-
+**Simulink 설계 및 검증 → Python 구현 → ROS 2 기반 실제 차량 적용**
+- **종방향 제어:** Simulink 환경에서 PID 기반 속도 제어기를 설계하고 테스트한 후, 이를 Python으로 구현하여 CAV 탑재 PC에서 실행
+- **실시간 속도 제어:** '/vehicle_speed' 토픽을 수신하여 CAV의 현재 속도를 받아 목표 속도와의 오차를 계산하여 PID 제어를 수행한 뒤, `/cmd_vel` 토픽을 통해 속도 제어 명령을 발행
+- **제어 시스템 통합:** Pure Pursuit 기반 횡방향 제어와 PID 기반 종방향 제어를 연계하여 경로 추종 및 목표 속도 유지를 위한 차량 제어 시스템 구현
 ![pid speed](images/pid_speed.png)
 
 ```c++
