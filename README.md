@@ -28,7 +28,6 @@ ROS 2 기반으로 동작하며, Pure pursuit + PID 제어를 통해 차선이�
 
 Matlab Simulink를 활용하여 종방향 제어에 Pid 제어를 구현
 
-![pid pp](images/pid_pp.png)
 ![pid speed](images/pid_speed.png)
 
 ```c++
